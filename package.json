@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MountainlandWEB/sample-node-app/issues"
   },
-  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme"
+  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme",
+  "devDependencies": {
+    "tsconfig-glob": "^0.4.3"
+  }
 }
