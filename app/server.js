@@ -2,18 +2,17 @@ var express = require('express');
 var app = express();
 var Messageservice = (function () {
     function Messageservice() {
+        this.messages = {
+            "messages": ['abc', 'testing', 'information']
+        };
     }
+    Messageservice.prototype.getMessage = function (user) {
+        if (user.user == 123) {
+            return this.messages;
+        }
+    };
     return Messageservice;
 }());
-var messages = {
-    "messages": ['abc', 'testing', 'information']
-};
-getMessage(user);
-{
-    if (user.user == 123) {
-        return this.messages;
-    }
-}
 ;
 app.post('/messages', function (req, res) {
     var user = req.body.user;

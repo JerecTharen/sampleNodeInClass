@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 class Messageservice{
-    let messages = {
+    messages = {
         "messages": ['abc', 'testing', 'information']
 };
     getMessage(user){
