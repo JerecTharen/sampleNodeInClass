@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-styles": " ./node_modules/.bin/node-sass -o client/public/css client/scss/",
+    "compile-styles-watch": "./node_modules/.bin/node-sass -o client/public/css client/scss/ -w"
+    
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MountainlandWEB/sample-node-app/issues"
   },
-  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme"
+  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.3"
+  }
 }
