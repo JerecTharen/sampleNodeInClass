@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MountainlandWEB/sample-node-app/issues"
   },
-  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme"
+  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
