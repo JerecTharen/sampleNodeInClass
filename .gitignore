@@ -61,4 +61,8 @@ typings/
 .idea
 .vscode
 
+# Weird MAC Fiel
 .DS_Store
+
+# compiled styles
+*.css
