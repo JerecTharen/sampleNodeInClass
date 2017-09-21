@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typescript-compile": "tsc",
+    "typescript-compile-watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MountainlandWEB/sample-node-app/issues"
   },
-  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme"
+  "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme",
+  "devDependencies": {
+    "tsconfig-glob": "^0.4.3"
+  }
 }
