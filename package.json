@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
     "compile-styles": " ./node_modules/.bin/node-sass -o client/public/css client/scss/",
     "compile-styles-watch": "./node_modules/.bin/node-sass -o client/public/css client/scss/ -w",
     "typescript-compile": "tsc",
@@ -24,10 +23,6 @@
   },
   "homepage": "https://github.com/MountainlandWEB/sample-node-app#readme",
   "dependencies": {
-    "express": "^4.15.4",
-    "devDependencies": {
-      "tsconfig-glob": "^0.4.3"
-    }
     "express": "^4.15.4"
   },
   "devDependencies": {
