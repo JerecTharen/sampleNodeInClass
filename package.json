@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-styles": " ./node_modules/.bin/node-sass -o client/public/css client/scss/",
+    "compile-styles-watch": "./node_modules/.bin/node-sass -o client/public/css client/scss/ -w",
     "typescript-compile": "tsc",
     "typescript-compile-watch": "tsc -w",
     "clean": "rimraf build"
@@ -27,6 +29,7 @@
   "devDependencies": {
     "jasmine": "^2.8.0",
     "rimraf": "^2.6.2",
-    "tsconfig-glob": "^0.4.3"
+    "tsconfig-glob": "^0.4.3",
+    "node-sass": "^4.5.3"
   }
 }

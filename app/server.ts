@@ -1,7 +1,7 @@
-const express = require('express')
-const app = express()
+import { express } from "express";
+const app = express();
 
-class Messageservice{
+class MessageService{
     messages = {
         "messages": ['abc', 'testing', 'information']
 };
@@ -14,7 +14,8 @@ class Messageservice{
 
 app.post('/messages', (req, res) => {
     let user = req.body.user;
-    let messages = new Messageservice.getMessage(user)
+    let messageService = new MessageService();
+    let messages = messageService.getMessage(user);
 
     if (messages) {
         res.send(messages)
