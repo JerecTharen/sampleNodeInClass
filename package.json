@@ -23,6 +23,7 @@
 
   "dependencies": {
     "express": "^4.15.4"
+  },
   "devDependencies": {
     "tsconfig-glob": "^0.4.3"
   }
