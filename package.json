@@ -9,7 +9,8 @@
     "compile-styles": " ./node_modules/.bin/node-sass -o client/public/css client/scss/",
     "compile-styles-watch": "./node_modules/.bin/node-sass -o client/public/css client/scss/ -w",
     "typescript-compile": "tsc",
-    "typescript-compile-watch": "tsc -w"
+    "typescript-compile-watch": "tsc -w",
+    "clean": "rimraf build"
   },
   "repository": {
     "type": "git",
@@ -26,8 +27,9 @@
     "express": "^4.15.4"
   },
   "devDependencies": {
-    "node-sass": "^4.5.3",
+    "jasmine": "^2.8.0",
+    "rimraf": "^2.6.2",
     "tsconfig-glob": "^0.4.3",
-    "jasmine": "^2.8.0"
+    "node-sass": "^4.5.3"
   }
 }
