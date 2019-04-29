@@ -1,10 +1,12 @@
-import { express } from "express";
-import {BodyParser} from "body-parser";
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
+app.use(bodyParser.json());
+
 class MessageService{
-    messages = {
-        "messages": [
+    constructor(){
+        this.messages = [
             {
                 message: 'abc',
                 user: 'default',
@@ -17,11 +19,11 @@ class MessageService{
                 message: 'information',
                 user: 'default',
             }
-        ]
-};
+        ];
+    }
     getMessage(user){
         let messageSend = [];
-        this.messages.messages.forEach((message)=>{
+        this.messages.forEach((message)=>{
             if(user.user === message.user){
                 messageSend.push(message);
             }
@@ -29,7 +31,7 @@ class MessageService{
         return messageSend;
     }
     addMessage(user){
-        this.messages.messages.push(user);
+        this.messages.push(user);
     }
 };
 
@@ -37,7 +39,8 @@ let messageService = new MessageService();
 
 app.post('/messages', (req, res) => {
     let user = req.body.user;
-    console.log(req.body);
+    console.log("body is",req.body);
+    console.log("user is",req.body.user);
     messageService.addMessage(user);
     let messages = messageService.getMessage(user);
 

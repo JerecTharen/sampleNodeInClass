@@ -1,23 +1,48 @@
-var express = require('express');
-var app = express();
-var Messageservice = (function () {
-    function Messageservice() {
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var app = express_1();
+var MessageService = /** @class */ (function () {
+    function MessageService() {
         this.messages = {
-            "messages": ['abc', 'testing', 'information']
+            "messages": [
+                {
+                    message: 'abc',
+                    user: 'default'
+                },
+                {
+                    message: 'testing',
+                    user: 'default'
+                },
+                {
+                    message: 'information',
+                    user: 'default'
+                }
+            ]
         };
     }
-    Messageservice.prototype.getMessage = function (user) {
-        if (user.user == 123) {
-            return this.messages;
-        }
+    MessageService.prototype.getMessage = function (user) {
+        var messageSend = [];
+        this.messages.messages.forEach(function (message) {
+            if (user.user === message.user) {
+                messageSend.push(message);
+            }
+        });
+        return messageSend;
     };
-    return Messageservice;
+    MessageService.prototype.addMessage = function (user) {
+        this.messages.messages.push(user);
+    };
+    return MessageService;
 }());
 ;
+var messageService = new MessageService();
 app.post('/messages', function (req, res) {
     var user = req.body.user;
-    var messages = new Messageservice.getMessage(user);
-    if (messages) {
+    console.log(req.body);
+    messageService.addMessage(user);
+    var messages = messageService.getMessage(user);
+    if (messages.length > 0) {
         res.send(messages);
     }
     else {
